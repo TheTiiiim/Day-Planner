@@ -34,13 +34,19 @@ textarea {
 	white-space: pre-wrap;
 	height: 80px;
 	border-top: 1px solid white;
-	;
 }
 
 .hour {
 	background-color: #ffffff;
 	color: #000000;
 	border-top: 1px dashed #000000;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.hour p {
+	margin: 0;
 }
 
 .past {
@@ -64,9 +70,12 @@ textarea {
 	border-bottom-right-radius: 15px;
 	background-color: #06AED5;
 	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.saveBtn i:hover {
+.saveBtn:hover i {
 	font-size: 20px;
 	transition: all .3s ease-in-out;
 }
