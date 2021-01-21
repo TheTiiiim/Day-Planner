@@ -2,21 +2,31 @@ $(function () {
 	displayDate();
 	createTimeBlocks();
 
+	// save event to localstorage
+	$(".saveBtn").on("click", function (e) {
+		let parent = $(this).parent();
+
+		let hourSlot = parent.attr("data-hour");
+		let data = parent.children("textarea").val();
+
+		localStorage.setItem(hourSlot, data);
+	});
+
 
 	function createTimeBlocks(day = dayjs()) {
 		let $blockArea = $(".blockArea");
 
 		for (let i = 0; i < 9; i++) {
 			// use hours 9 to 5
-			let hour = dayjs().hour(i + 9);
+			let hourObj = dayjs().hour(i + 9);
 
 			let tenseClass = ""
 			// determine relationship between represented hour and current hour
-			if (day.isAfter(hour, "hour")) {
+			if (day.isAfter(hourObj, "hour")) {
 				tenseClass = "past";
-			} else if (day.isSame(hour, "hour")) {
+			} else if (day.isSame(hourObj, "hour")) {
 				tenseClass = "present";
-			} else if (day.isBefore(hour, "hour")) {
+			} else if (day.isBefore(hourObj, "hour")) {
 				tenseClass = "future";
 			} else {
 				throw new Error("given time somehow is not past, present, or future");
@@ -25,12 +35,13 @@ $(function () {
 			// add time-block
 			$blockArea.append($("<div>")
 				.addClass("row time-block " + tenseClass)
+				.attr("data-hour", hourObj.hour())
 
 				// hour column
 				.append($("<div>")
 					.addClass("hour col-1")
 					.append($("<p>")
-						.text(hour.format("h a"))
+						.text(hourObj.format("h a"))
 					)
 				)
 
@@ -38,6 +49,8 @@ $(function () {
 				.append(
 					$("<textarea>")
 						.addClass("col description")
+						// display corrosponding event in localstorage
+						.text(localStorage.getItem(hourObj.hour()))
 				)
 
 				// save button
@@ -47,7 +60,7 @@ $(function () {
 						.addClass("fas fa-save")
 					)
 				)
-			)
+			);
 		}
 	}
 
