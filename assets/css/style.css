@@ -60,3 +60,11 @@ textarea {
 .blockArea {
 	margin-bottom: 30px;
 }
+
+@media (max-width: 575.98px) {
+	.hour,
+	.saveBtn {
+		flex: auto;
+		max-width: 50px;
+	}
+}

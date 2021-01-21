@@ -39,7 +39,7 @@ $(function () {
 
 				// hour column
 				.append($("<div>")
-					.addClass("hour col-1")
+					.addClass("hour col-sm-1")
 					.append($("<p>")
 						.text(hourObj.format("h a"))
 					)
@@ -55,7 +55,7 @@ $(function () {
 
 				// save button
 				.append($("<div>")
-					.addClass("saveBtn col-1")
+					.addClass("saveBtn col-sm-1")
 					.append($("<i>")
 						.addClass("fas fa-save")
 					)
