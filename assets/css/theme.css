@@ -1,0 +1,60 @@
+/* 
+colors
+
+D3FAD6 accent 1
+B18FCF accent 2
+
+EDF5FF light
+978897 med 1
+494850 med 2
+2C2C34 dark
+
+*/
+
+body {
+	color: #2C2C34;
+	background-color: #EDF5FF;
+}
+
+textarea,
+.jumbotron {
+	background-color: transparent;
+	border-color: #2C2C34;
+}
+
+.row {
+	border-color: #EDF5FF;
+}
+
+.past {
+	background-color: #494850;
+}
+
+.past textarea {
+	color: #EDF5FF;
+}
+
+.present {
+	background-color: #B18FCF;
+}
+
+.present .hour {
+	background-color: #B18FCF;
+}
+
+.future {
+	background-color: #978897;
+}
+
+.hour {
+	background-color: #EDF5FF;
+	color: #2C2C34;
+	border-color: #2C2C34;
+}
+
+.saveBtn {
+	background-color: #D3FAD6;
+	color: #2C2C34;
+	border-color: #D3FAD6;
+	border-left-color: #2C2C34;
+}
