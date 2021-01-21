@@ -1,7 +1,8 @@
 /* 
 colors
 
-D3FAD6 accent 1
+D3FAD6 accent 1 light
+478978 accent 1 dark
 B18FCF accent 2
 
 EDF5FF light
@@ -16,10 +17,17 @@ body {
 	background-color: #EDF5FF;
 }
 
-textarea,
-.jumbotron {
-	background-color: transparent;
+.jumbotron,
+textarea .saveBtn {
 	border-color: #2C2C34;
+}
+
+.jumbotron {
+	background-color: #D3FAD6;
+}
+
+textarea {
+	background-color: transparent;
 }
 
 .row {
@@ -53,8 +61,6 @@ textarea,
 }
 
 .saveBtn {
-	background-color: #D3FAD6;
+	background-color: #478978;
 	color: #2C2C34;
-	border-color: #D3FAD6;
-	border-left-color: #2C2C34;
 }
